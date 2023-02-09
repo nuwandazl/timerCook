@@ -7,6 +7,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RecipesFragment">
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,20 +31,43 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/belyashiki">
+            />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/zakuski_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/montserrat_semibold"
-                android:text="БЕЛЯШИКИ"
-                android:textColor="#00008b"
-                android:textSize="30sp" />
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_view2"
+            style="@style/AppTheme"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            app:strokeColor="#00008b"
+            app:strokeWidth="2dp"
+            card_view:cardCornerRadius="40dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/ponchiki">
         </RelativeLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_view3"
+            style="@style/AppTheme"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            app:strokeColor="#00008b"
+            app:strokeWidth="2dp"
+            card_view:cardCornerRadius="40dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/naggetsy">
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
+    </ScrollView>
 </FrameLayout>
