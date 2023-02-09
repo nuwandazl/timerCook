@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RecipesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view"
+        style="@style/AppTheme"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        app:strokeColor="#00008b"
+        app:strokeWidth="2dp"
+        card_view:cardCornerRadius="40dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/belyashiki">
+
+            <TextView
+                android:id="@+id/zakuski_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="БЕЛЯШИКИ"
+                android:textColor="#00008b"
+                android:textSize="30sp" />
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</FrameLayout>
