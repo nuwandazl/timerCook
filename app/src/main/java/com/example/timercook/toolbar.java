@@ -9,14 +9,14 @@ import android.widget.ImageButton;
 import android.widget.Toolbar;
 
 public class toolbar extends AppCompatActivity {
-    private ImageButton right_icon;
+    private ImageButton right_i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toolbar);
-        right_icon = findViewById(R.id.left_icon);
-        right_icon.setOnClickListener(new View.OnClickListener() {
+        right_i = findViewById(R.id.right_icon);
+        right_i.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent active = new Intent(toolbar.this, BelyashiActivity.class);
