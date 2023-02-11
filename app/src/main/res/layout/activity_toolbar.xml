@@ -2,6 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    tools:ignore="ContentDescription"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@android:color/white">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,7 +28,7 @@
             android:text="РЕЦЕПТЫ"
             android:textColor="#00008b"
             android:textSize="20sp" />
-        <ImageView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/right_icon"

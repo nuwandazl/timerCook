@@ -15,8 +15,4 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment_recipes).commit();
     }
-    public void spis_click (View view){
-        Intent active = new Intent(MainActivity.this,BelyashiActivity.class);
-        startActivity(active);
-    }
 }

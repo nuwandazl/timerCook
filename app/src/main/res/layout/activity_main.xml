@@ -22,11 +22,6 @@
         android:id = "@+id/container" >
     </FrameLayout>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="spis_click"
-            android:text="NEW BUTTON" />
     </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
