@@ -9,12 +9,9 @@
     tools:context=".MainActivity"
     tools:ignore="HardcodedText">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         tools:context=".MainActivity">
     <include android:id="@+id/include" layout="@layout/activity_toolbar"/>
 
@@ -24,6 +21,12 @@
         android:layout_height="match_parent"
         android:id = "@+id/container" >
     </FrameLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="spis_click"
+            android:text="NEW BUTTON" />
     </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
