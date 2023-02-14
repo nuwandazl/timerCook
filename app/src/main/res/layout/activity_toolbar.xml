@@ -28,14 +28,14 @@
             android:text="РЕЦЕПТЫ"
             android:textColor="#00008b"
             android:textSize="20sp" />
+
         <ImageButton
+            android:id="@+id/right_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/right_icon"
-            android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:src = "@drawable/baseline_face_retouching_natural_24"
-            />
+            android:layout_centerVertical="true"
+            android:src="@drawable/baseline_face_retouching_natural_24" />
 
     </RelativeLayout>
 
