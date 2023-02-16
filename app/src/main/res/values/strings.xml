@@ -3,14 +3,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="Ingredienty">
-        <item>Вода — 500 гр</item>
-        <item>Масло растительное — 2 ст.л </item>
-        <item>Мука — 500 гр</item>
+        <item>Сахар — 60 гр</item>
+        <item>Масло сливочное — 150 гр </item>
+        <item>Мука — 300 гр</item>
         <item>Соль — 1 ч.л</item>
-        <item>Сахар — по вкусу</item>
-        <item>Дрожжи сухие — 1 ч.л</item>
-        <item>Фарш — 500 гр</item>
-        <item>Лук репчатый — 250 гр</item>
-        <item>Перец черный — по вкусу</item>
+        <item>Черника — 200 гр</item>
+        <item>Сахар — 15 гр</item>
+        <item>Крахмал — 5 гр</item>
     </string-array>
 </resources>

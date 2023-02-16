@@ -1,74 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:confi="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".BlankFragment">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_view"
-            style="@style/AppTheme"
-            android:layout_width="wrap_content"
-            android:layout_height="250dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/gradient1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <RelativeLayout
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_view"
+                style="@style/AppTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/gradient1">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pie"
+                        android:scaleType="centerCrop"/>
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/exit"
+                    android:layout_width="50dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="350dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#79ECE0E0"
+                    android:contentDescription="TODO"
+                    android:paddingStart="13dp"
+                    android:textColor="#000"
+                    app:cornerRadius="@android:dimen/app_icon_size"
+                    app:icon="@drawable/baseline_close_24"
+                    app:iconTint="@color/black" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/blackberry_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/belyashiki">
-            </RelativeLayout>
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Черничный пирог"
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
-            <Button
-                android:id="@+id/exit"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                android:backgroundTint="#79ECE0E0"
-                android:paddingStart="13dp"
-                android:textColor="#000"
-                android:layout_marginStart="350dp"
+            <TextView
+                android:id="@+id/ingr_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                app:cornerRadius="@android:dimen/app_icon_size"
-                app:icon="@drawable/baseline_close_24"
-                app:iconTint="@color/black"
-                android:contentDescription="TODO" />
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Ингредиенты"
+                android:textColor="#000000"
+                android:textSize="14sp" />
 
-        </com.google.android.material.card.MaterialCardView>
+            <ListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="336dp" />
 
-        <TextView
-            android:id="@+id/belyashi_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Беляши"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#c0c0c0" />
 
-        <TextView
-            android:id="@+id/ingr_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Ингредиенты"
-            android:textColor="#000000"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/sposob_prig_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Способ приготовления"
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
-        <ListView
-            android:id="@+id/list_view"
-            android:layout_width="match_parent"
-            android:layout_height="336dp" />
-    </LinearLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/confi"
+                style="@style/AppTheme"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="0dp"
+                app:strokeColor="#00008b"
+                app:strokeWidth="2dp"
+                confi:cardCornerRadius="40dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/confi"></RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/shagOne"
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Чернику, крахмал и сахар перемешиваем в одной миске и вместе провариваем до загустения 10 минут"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/countTime"
+                    android:layout_width="0dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:text="00:10:00"
+                    android:textSize="25dp" />
+
+                <Button
+                    android:id="@+id/btnStart"
+                    android:layout_width="0dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#00008b"
+                    android:text="Начать"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btnStop"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#00008b"
+                    android:text="Стоп"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>

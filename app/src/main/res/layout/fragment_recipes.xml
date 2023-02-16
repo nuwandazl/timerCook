@@ -32,7 +32,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@drawable/belyashiki">
+            android:background="@drawable/pie">
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
 

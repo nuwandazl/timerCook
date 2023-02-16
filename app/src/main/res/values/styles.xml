@@ -2,8 +2,8 @@
 <resources>
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
         <item name="android:layout_gravity">center</item>
-        <item name="android:layout_width">350dp</item>
-        <item name="android:layout_height">200dp</item>
+        <item name="android:layout_width">370dp</item>
+        <item name="android:layout_height">220dp</item>
 
     </style>
     <style name="nav_item" parent="Theme.AppCompat.Light.DarkActionBar">
