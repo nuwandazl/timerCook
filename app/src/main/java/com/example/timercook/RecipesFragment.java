@@ -75,7 +75,6 @@ public class RecipesFragment extends Fragment {
 
     }
     private MaterialCardView belyash;
-    private BlankFragment blankFragment = new BlankFragment();
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -84,7 +83,7 @@ public class RecipesFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, blankFragment).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentStore.blankFragment).commit();
 //                Intent active = new Intent(getView().getContext(), BelyashiActivity.class);
 //                startActivity(active);
             }
