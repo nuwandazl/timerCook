@@ -14,36 +14,25 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BlankFragment#newInstance} factory method to
+ * Use the {@link CookiesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BlankFragment extends Fragment {
-    private Button exitexit;
+public class CookiesFragment extends Fragment {
 
-    private static final long START_TIME_IN_MILLIS = 600000;
-    private static final long START_TIME_IN_MILLIS2 = 1200000;
+    private Button exitexit3;
+
+    private static final long START_TIME_IN_MILLIS = 1500000;
     private TextView mTextViewCountDown;
     private Button mButtonStartPause;
     private Button mButtonReset;
-
-    private TextView mTextViewCountDown2;
-    private Button mButtonStartPause2;
-    private Button mButtonReset2;
-
     private CountDownTimer mCountDownTimer;
-    private CountDownTimer mCountDownTimer2;
-
     private boolean mTimerRunning;
-    private boolean mTimerRunning2;
-
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
-    private long mTimeLeftInMillis2 = START_TIME_IN_MILLIS2;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -53,7 +42,7 @@ public class BlankFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public BlankFragment() {
+    public CookiesFragment() {
         // Required empty public constructor
     }
 
@@ -63,11 +52,11 @@ public class BlankFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment BlankFragment.
+     * @return A new instance of fragment CookiesFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static BlankFragment newInstance(String param1, String param2) {
-        BlankFragment fragment = new BlankFragment();
+    public static CookiesFragment newInstance(String param1, String param2) {
+        CookiesFragment fragment = new CookiesFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -88,51 +77,47 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+        return inflater.inflate(R.layout.fragment_cookies, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ListView listView = (ListView) getView().findViewById(R.id.list_view);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.Ingredienty,
+        ListView listView = (ListView) getView().findViewById(R.id.list_view3);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.Ingredienty3,
                 android.R.layout.simple_list_item_1);
         listView.setAdapter(adapter);
 
-        exitexit = (Button) getView().findViewById(R.id.exit);
-        exitexit.setOnClickListener(new View.OnClickListener() {
+        exitexit3 = (Button) getView().findViewById(R.id.exit2);
+        exitexit3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentStore.recipesFragment).commit();
             }
         });
+
         mTextViewCountDown = getView().findViewById(R.id.countTime);
         mButtonStartPause = getView().findViewById(R.id.btnStartPause);
         mButtonReset = getView().findViewById(R.id.btnReset);
 
-        mTextViewCountDown2 = getView().findViewById(R.id.countTime2);
-        mButtonStartPause2 = getView().findViewById(R.id.btnStartPause2);
-        mButtonReset2 = getView().findViewById(R.id.btnReset2);
-
-
-        mButtonStartPause2.setOnClickListener(new View.OnClickListener() {
+        mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mTimerRunning2) {
-                    pauseTimer2();
-                }else{
-                    startTimer2();
+                if (mTimerRunning) {
+                    pauseTimer();
+                } else {
+                    startTimer();
                 }
             }
         });
-        mButtonReset2.setOnClickListener(new View.OnClickListener() {
+        mButtonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                resetTimer2();
+                resetTimer();
             }
         });
-
 
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,40 +160,11 @@ public class BlankFragment extends Fragment {
         mButtonReset.setVisibility(View.INVISIBLE);
     }
 
-    private void startTimer2() {
-        mCountDownTimer2 = new CountDownTimer(mTimeLeftInMillis2,1000) {
-            @Override
-            public void onTick(long millisUntilFinished2) {
-                mTimeLeftInMillis2 = millisUntilFinished2;
-                updateCountDownText2();
-            }
-
-            @Override
-            public void onFinish() {
-                mTimerRunning2 = false;
-                mButtonStartPause2.setText("Старт");
-                mButtonStartPause2.setVisibility(View.INVISIBLE);
-                mButtonReset2.setVisibility(View.VISIBLE);
-            }
-        }.start();
-
-        mTimerRunning2 = true;
-        mButtonStartPause2.setText("Пауза");
-        mButtonReset2.setVisibility(View.INVISIBLE);
-    }
-
-
     private void pauseTimer() {
         mCountDownTimer.cancel();
         mTimerRunning = false;
         mButtonStartPause.setText("Старт");
         mButtonReset.setVisibility(View.VISIBLE);
-    }
-    private void pauseTimer2() {
-        mCountDownTimer2.cancel();
-        mTimerRunning2 = false;
-        mButtonStartPause2.setText("Старт");
-        mButtonReset2.setVisibility(View.VISIBLE);
     }
 
     private void  resetTimer() {
@@ -218,13 +174,6 @@ public class BlankFragment extends Fragment {
         mButtonStartPause.setVisibility(View.VISIBLE);
     }
 
-    private void  resetTimer2() {
-        mTimeLeftInMillis2 = START_TIME_IN_MILLIS2;
-        updateCountDownText2();
-        mButtonReset2.setVisibility(View.INVISIBLE);
-        mButtonStartPause2.setVisibility(View.VISIBLE);
-    }
-
     private void updateCountDownText() {
         int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
         int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
@@ -232,14 +181,5 @@ public class BlankFragment extends Fragment {
         String timeLeftFormatted = String.format(Locale.getDefault(),"%02d:%02d", minutes,seconds);
 
         mTextViewCountDown.setText(timeLeftFormatted);
-    }
-
-    private void updateCountDownText2() {
-        int minutess = (int) (mTimeLeftInMillis2 / 1000) / 60;
-        int secondss = (int) (mTimeLeftInMillis2 / 1000) % 60;
-
-        String timeLeftFormatted2 = String.format(Locale.getDefault(),"%02d:%02d", minutess,secondss);
-
-        mTextViewCountDown2.setText(timeLeftFormatted2);
     }
 }

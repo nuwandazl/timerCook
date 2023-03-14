@@ -75,6 +75,8 @@ public class RecipesFragment extends Fragment {
 
     }
     private MaterialCardView belyash;
+    private MaterialCardView ponchiki;
+    private MaterialCardView cookiess;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -84,8 +86,23 @@ public class RecipesFragment extends Fragment {
             public void onClick(View view) {
 
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentStore.blankFragment).commit();
-//                Intent active = new Intent(getView().getContext(), BelyashiActivity.class);
-//                startActivity(active);
+            }
+        });
+
+
+        ponchiki=getView().findViewById(R.id.card_view2);
+        ponchiki.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentStore.ponchikiFragment).commit();
+            }
+        });
+
+        cookiess=getView().findViewById(R.id.card_view3);
+        cookiess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentStore.cookiesFragment).commit();
             }
         });
     }

@@ -11,4 +11,24 @@
         <item>Сахар — 15 гр</item>
         <item>Крахмал — 5 гр</item>
     </string-array>
+
+    <string-array name="Ingredienty2">
+        <item>Сахар — 50 гр</item>
+        <item>Масло сливочное — 20 гр </item>
+        <item>Мука — 250 гр</item>
+        <item>Соль — 3 гр.</item>
+        <item>Яйцо — 1 шт</item>
+        <item>Сахар — 15 гр</item>
+        <item>Масло растительное — для фритюра</item>
+    </string-array>
+
+    <string-array name="Ingredienty3">
+        <item>Сахар — 100 гр</item>
+        <item>Масло сливочное — 100 гр </item>
+        <item>Мука — 200 гр</item>
+        <item>Разрыхлитель — 1 ч.л.</item>
+        <item>Яйцо — 1 шт</item>
+        <item>Шоколад — 100 гр</item>
+        <item>Ванилин — 1 ч.л.</item>
+    </string-array>
 </resources>
