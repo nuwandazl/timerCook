@@ -1,12 +1,27 @@
 package com.example.timercook;
 
+import static android.content.Context.NOTIFICATION_SERVICE;
+import static androidx.core.content.ContextCompat.getSystemService;
+
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +41,7 @@ public class Ponchiki extends Fragment {
 
     private Button exitexit2;
 
-    private static final long START_TIME_IN_MILLIS = 3600000;
+    private static final long START_TIME_IN_MILLIS = 10000;
     private TextView mTextViewCountDown;
     private Button mButtonStartPause;
     private Button mButtonReset;
@@ -80,6 +95,7 @@ public class Ponchiki extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ponchiki, container, false);
+
     }
 
     @Override
@@ -91,11 +107,20 @@ public class Ponchiki extends Fragment {
                 android.R.layout.simple_list_item_1);
         listView.setAdapter(adapter);
 
+
         exitexit2 = (Button) getView().findViewById(R.id.exit2);
         exitexit2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MediaPlayer player = MediaPlayer.create(getContext(), R.raw.hogwarts);
+                if (player.isPlaying()) {
+                    player.stop();
+                    player.release();
+                    player = MediaPlayer.create(getContext(), R.raw.hogwarts);
+                }
+                player.start();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentStore.recipesFragment).commit();
+
             }
         });
         mTextViewCountDown = getView().findViewById(R.id.countTime);
@@ -127,6 +152,13 @@ public class Ponchiki extends Fragment {
                 }else{
                     startTimer();
                 }
+                Vibrator vibrator = (Vibrator) getActivity().getSystemService(getContext().VIBRATOR_SERVICE);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    long[] pattern={0,400,100,0};
+                    vibrator.vibrate(VibrationEffect.createWaveform(pattern,-1));
+                }else {
+                    vibrator.vibrate(1000);
+                }
             }
         });
         mButtonReset.setOnClickListener(new View.OnClickListener() {
@@ -152,6 +184,40 @@ public class Ponchiki extends Fragment {
                 mButtonStartPause.setText("Старт");
                 mButtonStartPause.setVisibility(View.INVISIBLE);
                 mButtonReset.setVisibility(View.VISIBLE);
+                final String CHANEL = "main";
+                final int NOTIFY_ID = 100;
+
+                Handler handler = new Handler();
+                NotificationManager  notificationManager = (NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
+                NotificationChannel channel = null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    channel = new NotificationChannel(CHANEL, "Main chanel", notificationManager.IMPORTANCE_DEFAULT);
+                }
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    notificationManager.createNotificationChannel(channel);
+                }
+
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent notificationIntent = new Intent(getContext(), MainActivity.class);
+                        PendingIntent contentIntent = PendingIntent.getActivity(getContext(), 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE);
+                        NotificationCompat.Builder builder = new NotificationCompat.Builder(getContext(), CHANEL)
+                                .setSmallIcon(R.drawable.ic_launcher_background)
+                                .setContentTitle(getContext().getString(R.string.timerOver))
+                                .setChannelId(CHANEL)
+                                .setContentText(getContext().getString(R.string.miniText))
+                                .setContentIntent(contentIntent)
+                                .setPriority(NotificationCompat.PRIORITY_HIGH);
+
+
+
+                        Notification notification=builder.build();
+                        notification.defaults=Notification.DEFAULT_ALL;
+
+                        notificationManager.notify(NOTIFY_ID, builder.build());
+                    }
+                }, 5000);
             }
         }.start();
 

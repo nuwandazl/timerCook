@@ -1,12 +1,23 @@
 package com.example.timercook;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +37,7 @@ import java.util.Locale;
 public class BlankFragment extends Fragment {
     private Button exitexit;
 
-    private static final long START_TIME_IN_MILLIS = 600000;
+    private static final long START_TIME_IN_MILLIS = 60000;
     private static final long START_TIME_IN_MILLIS2 = 1200000;
     private TextView mTextViewCountDown;
     private Button mButtonStartPause;
@@ -44,10 +55,18 @@ public class BlankFragment extends Fragment {
 
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
     private long mTimeLeftInMillis2 = START_TIME_IN_MILLIS2;
+    private Vibrator vibrator;
+    private Handler handler;
+    private NotificationManager notificationManager;
+    private static final int NOTIFY_ID = 100;
+    private final String CHANEL = "main";
+    private Context context;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+//    long[] pattern={0,400,100,0};
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -117,6 +136,8 @@ public class BlankFragment extends Fragment {
 
 
         mButtonStartPause2.setOnClickListener(new View.OnClickListener() {
+            private Context context;
+
             @Override
             public void onClick(View view) {
                 if (mTimerRunning2) {
@@ -127,6 +148,7 @@ public class BlankFragment extends Fragment {
             }
         });
         mButtonReset2.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 resetTimer2();
@@ -137,11 +159,13 @@ public class BlankFragment extends Fragment {
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if (mTimerRunning) {
                     pauseTimer();
                 }else{
                     startTimer();
                 }
+
             }
         });
         mButtonReset.setOnClickListener(new View.OnClickListener() {

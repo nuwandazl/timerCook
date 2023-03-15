@@ -20,6 +20,11 @@
         android:orientation="vertical"
         >
 
+        <Button
+            android:id="@+id/btn"
+            android:text="Ryjgrf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_view"
         style="@style/AppTheme"

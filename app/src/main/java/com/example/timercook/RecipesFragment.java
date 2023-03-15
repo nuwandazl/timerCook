@@ -1,6 +1,8 @@
 package com.example.timercook;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 
@@ -11,6 +13,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,12 +78,26 @@ public class RecipesFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_recipes, container, false);
 
     }
+    private Button button;
     private MaterialCardView belyash;
     private MaterialCardView ponchiki;
     private MaterialCardView cookiess;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        button=getView().findViewById(R.id.btn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                long[] pattern = { 500, 300, 400, 200 };
+                Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+                if (vibrator.hasVibrator()) {
+                    vibrator.vibrate(pattern, 2);
+                }
+            }
+        });
+
         belyash=getView().findViewById(R.id.card_view);
         belyash.setOnClickListener(new View.OnClickListener() {
             @Override

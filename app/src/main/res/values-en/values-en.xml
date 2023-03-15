@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">timerCook</string>
+    <string name="timerOver">Time is over</string>
+    <string name="miniText">Next delisios</string>
+
+    <string-array name="Ingredienty">
+        <item>Sugar — 60 гр</item>
+        <item>Butter — 150 гр </item>
+        <item>Torment — 300 гр</item>
+        <item>Salt — 1 ч.л</item>
+        <item>Bilberry — 200 гр</item>
+        <item>Sugar — 15 гр</item>
+        <item>Starch — 5 гр</item>
+    </string-array>
+</resources>

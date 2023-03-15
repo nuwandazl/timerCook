@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">timerCook</string>
+    <string name="app_name">Локализованное приложение</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="timerOver">Время истекло!</string>
+    <string name="miniText">Следующее блюдо ждёт!</string>
     <string-array name="Ingredienty">
         <item>Сахар — 60 гр</item>
         <item>Масло сливочное — 150 гр </item>
