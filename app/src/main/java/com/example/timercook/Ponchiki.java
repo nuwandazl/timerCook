@@ -181,7 +181,7 @@ public class Ponchiki extends Fragment {
             @Override
             public void onFinish() {
                 mTimerRunning = false;
-                mButtonStartPause.setText("Старт");
+                mButtonStartPause.setText("@string/start");
                 mButtonStartPause.setVisibility(View.INVISIBLE);
                 mButtonReset.setVisibility(View.VISIBLE);
                 final String CHANEL = "main";
@@ -222,14 +222,14 @@ public class Ponchiki extends Fragment {
         }.start();
 
         mTimerRunning = true;
-        mButtonStartPause.setText("Пауза");
+        mButtonStartPause.setText("pause");
         mButtonReset.setVisibility(View.INVISIBLE);
     }
 
     private void pauseTimer() {
         mCountDownTimer.cancel();
         mTimerRunning = false;
-        mButtonStartPause.setText("Старт");
+        mButtonStartPause.setText("start");
         mButtonReset.setVisibility(View.VISIBLE);
     }
 

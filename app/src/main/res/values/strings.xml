@@ -3,6 +3,26 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="timerOver">Время истекло!</string>
     <string name="miniText">Следующее блюдо ждёт!</string>
+    <string name="ponchiki">Пончики</string>
+    <string name="title_app">Рецепты</string>
+    <string name="ingr">Ингредиенты</string>
+    <string name="sposob_prig_title">Способ приготовления</string>
+
+    <string name="stepOne">1. Муку просеять, смешать с сухими ингредиентами. Постепенно добавить масло и воду. Замесить мягкое тесто.</string>
+    <string name="stepTwo">2. Тесто накрыть полотенцем и поставить в теплое место, я ставлю на водяную баню на 20,30 минут.</string>
+    <string name="stepThree">3. Когда тесто увеличится вдвое, обмять его.</string>
+    <string name="stepFour">4. Сформировать пончики. Для этого тесто разделить на 4 части. Скатать каждую часть в колбаску толщиной около 2 см. Колбаски разрезать на кусочки длиной около 8 см. Концы заготовки соединить, слепить колечко. Так слепить все пончики. Дать подойти 15 минут.</string>
+    <string name="stepFive">5. В сковородке разогреть масло и жарить пончики на среднем огне до золотистого цвета. Минуты по две с каждой стороны.</string>
+    <string name="stepSix">6. Выложить пончики на салфетку. Дать стечь лишнему жиру.</string>
+    <string name="stepSeven">7. Остудить и посыпать сахарной пудрой.</string>
+
+    <string name="result">Готово! Приятного аппетита!</string>
+
+    <string name="start">Старт</string>
+    <string name="reset">Сброс</string>
+    <string name="pause">Пауза</string>
+
+
     <string-array name="Ingredienty">
         <item>Сахар — 60 гр</item>
         <item>Масло сливочное — 150 гр </item>

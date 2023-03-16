@@ -3,14 +3,52 @@
     <string name="app_name">timerCook</string>
     <string name="timerOver">Time is over</string>
     <string name="miniText">Next delisios</string>
+    <string  name="ponchiki">Donats</string>
+    <string name="title_app">Recipes</string>
+    <string name="ingr">Ingridients</string>
+    <string name="sposob_prig_title">Cooking method</string>
+
+    <string name="stepOne">1. Sift flour, mix with dry ingredients. Gradually add oil and water. Knead a soft dough.</string>
+    <string name="stepTwo">2. Cover the dough with a towel and put it in a warm place, I put it in a water bath for 20,30 minutes.</string>
+    <string name="stepThree">3. When the dough has doubled in size, knead it.</string>
+    <string name="stepFour">4. Form donuts. To do this, divide the dough into 4 parts. Roll each part into a sausage about 2 cm thick . Cut the sausages into pieces about 8 cm long . Connect the ends of the workpiece, make a ring. So blind all the donuts. Let it come up for 15 minutes.</string>
+    <string name="stepFive">5. Heat the oil in a frying pan and fry the donuts over medium heat until golden brown. Two minutes on each side.</string>
+    <string name="stepSix">6. Put the donuts on a napkin. Allow excess fat to drain.</string>
+    <string name="stepSeven">7. Cool and sprinkle with powdered sugar.</string>
+
+    <string name="result">Done! Enjoy your meal!</string>
+
+    <string name="start">Start</string>
+    <string name="reset">Reset</string>
+    <string name="pause">Pause</string>
 
     <string-array name="Ingredienty">
-        <item>Sugar — 60 гр</item>
-        <item>Butter — 150 гр </item>
-        <item>Torment — 300 гр</item>
-        <item>Salt — 1 ч.л</item>
-        <item>Bilberry — 200 гр</item>
-        <item>Sugar — 15 гр</item>
-        <item>Starch — 5 гр</item>
+        <item>Sugar — 60 gr</item>
+        <item>Butter — 150 gr </item>
+        <item>Torment — 300 gr</item>
+        <item>Salt — 1 c.l</item>
+        <item>Bilberry — 200 gr</item>
+        <item>Sugar — 15 gr</item>
+        <item>Starch — 5 gr</item>
+    </string-array>
+
+    <string-array name="Ingredienty2">
+        <item>Sugar — 50 gr</item>
+        <item>Butter butter — 20 gr </item>
+        <item>Torment — 250 gr</item>
+        <item>Salt — 3 gr</item>
+        <item>Eggs — 1 sht</item>
+        <item>Sugar — 15 gr</item>
+        <item>Butter — deep frying</item>
+    </string-array>
+
+    <string-array name="Ingredienty3">
+        <item>Sugar — 100 gr</item>
+        <item>Butter — 100 gr</item>
+        <item>Torment — 200 gr</item>
+        <item>Baking powder — 1 c.l.</item>
+        <item>Eggs — 1 sht</item>
+        <item>Chocolate — 100 gr</item>
+        <item>Vanilla — 1 c.l.</item>
     </string-array>
 </resources>

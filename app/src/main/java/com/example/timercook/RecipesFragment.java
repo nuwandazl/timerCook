@@ -86,18 +86,6 @@ public class RecipesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        button=getView().findViewById(R.id.btn);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                long[] pattern = { 500, 300, 400, 200 };
-                Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
-                if (vibrator.hasVibrator()) {
-                    vibrator.vibrate(pattern, 2);
-                }
-            }
-        });
-
         belyash=getView().findViewById(R.id.card_view);
         belyash.setOnClickListener(new View.OnClickListener() {
             @Override

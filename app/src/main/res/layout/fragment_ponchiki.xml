@@ -60,7 +60,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Пончики"
+                android:text="@string/ponchiki"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
@@ -72,7 +72,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Ингредиенты"
+                android:text="@string/ingr"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
@@ -94,7 +94,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Способ приготовления"
+                android:text="@string/sposob_prig_title"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
@@ -108,7 +108,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="1. Муку просеять, смешать с сухими ингредиентами. Постепенно добавить масло и воду. Замесить мягкое тесто."
+                android:text="@string/stepOne"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
@@ -121,7 +121,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="2. Тесто накрыть полотенцем и поставить в теплое место, я ставлю на водяную баню на 20-30 минут."
+                android:text="@string/stepTwo"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
@@ -134,7 +134,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="3. Когда тесто увеличится вдвое, обмять его."
+                android:text="@string/stepThree"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
@@ -147,7 +147,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="4. Сформировать пончики. Для этого тесто разделить на 4 части. Скатать каждую часть в колбаску толщиной около 2 см. Колбаски разрезать на кусочки длиной около 8 см. Концы заготовки соединить, слепить колечко. Так слепить все пончики. Дать подойти 15 минут."
+                android:text="@string/stepFour"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
@@ -160,7 +160,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="5. В сковородке разогреть масло и жарить пончики на среднем огне до золотистого цвета. Минуты по две с каждой стороны."
+                android:text="@string/stepFive"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
@@ -173,7 +173,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="6. Выложить пончики на салфетку. Дать стечь лишнему жиру."
+                android:text="@string/stepSix"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
@@ -186,7 +186,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="7. Остудить и посыпать сахарной пудрой."
+                android:text="@string/stepSeven"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 
@@ -210,26 +210,26 @@
                 <Button
                     android:id="@+id/btnStartPause"
                     android:layout_width="0dp"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:backgroundTint="#00008b"
-                    android:text="Начать"
+                    android:text="@string/start"
                     android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/btnReset"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_margin="5dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:backgroundTint="#00008b"
-                    android:text="Сброс"
+                    android:text="@string/reset"
                     android:textSize="16sp"
                     android:visibility="invisible"
-                    tools:visibility="visible"/>
+                    tools:visibility="visible" />
             </LinearLayout>
 
 
@@ -257,7 +257,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="Готово! Приятного аппетита!"
+                android:text="@string/result"
                 android:textColor="#000000"
                 android:textSize="14sp" />
 

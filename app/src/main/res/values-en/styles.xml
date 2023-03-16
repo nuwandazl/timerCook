@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">370dp</item>
+        <item name="android:layout_height">220dp</item>
+
+    </style>
+    <style name="nav_item" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">17dp</item>
+    </style>
+</resources>
